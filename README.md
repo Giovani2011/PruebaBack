@@ -1,68 +1,19 @@
-# CodeIgniter 4 Application Starter
+# Desarrollo de una API con CodeIgniter 4
 
-## What is CodeIgniter?
+Se solicitó el desarrollo de una API utilizando PHP y la librería CodeIgniter 4, con el objetivo de implementar un sistema CRUD (Crear, Leer, Actualizar y Eliminar) en una base de datos. Esta API permitirá gestionar datos de manera eficiente y escalable, facilitando la creación de nuevos registros, la lectura de información existente, la actualización de datos y la eliminación de registros innecesarios. CodeIgniter 4 proporciona una estructura robusta que optimiza el rendimiento y la mantenibilidad del sistema.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+# Instalación y Actualizaciones
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Para instalar la aplicación, utiliza el comando composer create-project codeigniter4/appstarter, seguido de composer update cada vez que haya una nueva versión del framework. Al actualizar, revisa las notas de la versión para identificar cualquier cambio que debas aplicar a tu carpeta app.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+# Configuración
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Copia el archivo env a .env y ajusta la configuración según las necesidades de tu aplicación, prestando especial atención a la baseURL y a los ajustes de la base de datos.
 
-## Installation & updates
+# Cambio Importante con index.php
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+El archivo index.php ya no se encuentra en la raíz del proyecto; ha sido movido a la carpeta public para mejorar la seguridad y la separación de componentes. Por lo tanto, debes configurar tu servidor web para que apunte a la carpeta public de tu proyecto, en lugar de a la raíz del proyecto.
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+# Requisitos del Servidor
 
-## Setup
-
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.4 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> The end of life date for PHP 7.4 was November 28, 2022.
-> The end of life date for PHP 8.0 was November 26, 2023.
-> If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> The end of life date for PHP 8.1 will be November 25, 2024.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Se requiere PHP versión 7.4 o superior, con las siguientes extensiones instaladas: intl, mbstring, json (habilitada por defecto), mysqlnd (si planeas usar MySQL) y libcurl (si planeas usar la biblioteca HTTP\CURLRequest). Es importante tener en cuenta que PHP 7.4 y 8.0 han llegado al final de su vida útil, por lo que se recomienda actualizar a versiones más recientes.
