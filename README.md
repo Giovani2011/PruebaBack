@@ -17,3 +17,7 @@ El archivo index.php ya no se encuentra en la raíz del proyecto; ha sido movido
 # Requisitos del Servidor
 
 Se requiere PHP versión 7.4 o superior, con las siguientes extensiones instaladas: intl, mbstring, json (habilitada por defecto), mysqlnd (si planeas usar MySQL) y libcurl (si planeas usar la biblioteca HTTP\CURLRequest). Es importante tener en cuenta que PHP 7.4 y 8.0 han llegado al final de su vida útil, por lo que se recomienda actualizar a versiones más recientes.
+
+# Comando iniciador :
+
+php spark serve
